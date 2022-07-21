@@ -1,3 +1,6 @@
+# All the below commands were typed manually into the command line and not run as a script
+# These are the commands I used to upload, move & unzip files, & run the other attached scripts as batch jobs in the cluster
+
 #in local terminal
 scp -r MiSeqAnalysis-20220720T224907Z-002.zip jcomstock@pod.cnsi.ucsb.edu:/home/jcomstock/Baratheon/
 scp -r MiSeqAnalysis-20220720T224907Z-001.zip jcomstock@pod.cnsi.ucsb.edu:/home/jcomstock/Baratheon/
