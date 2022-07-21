@@ -1,5 +1,5 @@
 library("dada2")
-path <- "/home/jcomstock/BIOS_Frac"
+path <- "/home/jcomstock/Baratheon/fastqs"
 fnFs <- sort(list.files(path, pattern="_R1_001.fastq", full.names = TRUE))
 fnRs <- sort(list.files(path, pattern="_R2_001.fastq", full.names = TRUE))
 sample.names <- sapply(strsplit(basename(fnFs), "_L"), `[`, 1)
@@ -38,10 +38,10 @@ for (i in 1:dim(t.seqtab.nochim)[1]) {
   asv_headers[i] <- paste(">ASV", i, sep="_")
 }
 asv_fasta <- c(rbind(asv_headers, asv_seqs))
-write(asv_fasta, "BIOSSCOPE_SizeFrac_ASVs.fasta")
+write(asv_fasta, "Baratheon_ASVs.fasta")
 taxa <- assignTaxonomy(seqtab.nochim, "silva_nr99_v138.1_wSpecies_train_set.fa.gz")
 unname(head(taxa))
 saveRDS(taxa, "taxa.rds")
-write.table(cbind(t(seqtab.nochim) , taxa), "BIOSSCOPE_SizeFrac_seqtab-nochimtaxa.txt", sep="\t", row.names=TRUE, col.names=NA, quote=FALSE)
-write.table(taxa,"BIOSSCOPE_SizeFrac_taxa.txt", sep="\t", row.names=TRUE, col.names=NA, quote=FALSE)
+write.table(cbind(t(seqtab.nochim) , taxa), "Baratheon_seqtab-nochimtaxa.txt", sep="\t", row.names=TRUE, col.names=NA, quote=FALSE)
+write.table(taxa,"Baratheon_taxa.txt", sep="\t", row.names=TRUE, col.names=NA, quote=FALSE)
 q()
