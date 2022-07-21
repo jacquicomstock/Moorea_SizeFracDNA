@@ -42,13 +42,13 @@ conda activate R4.2.0
 
 #make dada2 R script
 vi Baratheon_dada2.R
-#paste the dada2 R script into this new file
+#paste the dada2 R script into this new file and press esc
 :w
 :q
 
 #make fasta R script
 vi Baratheon_fasta.r
-#paste the fasta R script into this new file
+#paste the fasta R script into this new file and press esc
 :w
 :q
 
