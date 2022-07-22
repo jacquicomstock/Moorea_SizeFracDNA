@@ -66,3 +66,17 @@ sbatch \
 	--output=dada2_out \
 	--error=dada2_err \
 	--wrap="Rscript Baratheon_dada2.R"
+
+
+#Once the R script has finished running, move output files to new folder
+cd Baratheon
+mkdir dada2_output_files
+cd fastqs
+mv *.fasta /home/jcomstock/Baratheon/dada2_output_files/
+mv *.txt /home/jcomstock/Baratheon/dada2_output_files/
+mv *.rds /home/jcomstock/Baratheon/dada2_output_files/
+mv dada2_err /home/jcomstock/Baratheon/dada2_output_files/
+mv dada2_out /home/jcomstock/Baratheon/dada2_output_files/
+
+#Download the output files onto local computer, this is done in a local terminal window not in the cluster terminal window
+scp -r jcomstock@pod.cnsi.ucsb.edu:/home/jcomstock/Baratheon/dada2_output_files/ /home/mobaxterm/Desktop/Research/Projects/Moorea/MOOREA\ 2019/Baratheon/0_CLEANED.REDONE.analyses/
